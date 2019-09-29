@@ -55,6 +55,17 @@ public class ContactService {
         return contactValidation;
     }
 
+    public ContactsDeletion deleteContacts(List<Integer> idsList) {
+        ContactsDeletion contactsDeletion = new ContactsDeletion();
+        int deletedContactsNumber = contactDao.deleteContacts(idsList);
+        contactsDeletion.setDeleteNumber(deletedContactsNumber);
+
+        if (deletedContactsNumber == 0) {
+            contactsDeletion.setError("Ни одного контакта не удалено.");
+        }
+        return contactsDeletion;
+    }
+
     public List<Contact> getAllContacts() {
         return contactDao.getAllContacts();
     }

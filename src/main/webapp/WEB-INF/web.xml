@@ -7,8 +7,13 @@
   <display-name>PhoneBook on Servlets</display-name>
 
   <servlet>
-    <servlet-name>AddContactsServlet</servlet-name>
+    <servlet-name>AddContactServlet</servlet-name>
     <servlet-class>ru.academits.servlet.AddContactServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>DeleteContactsServlet</servlet-name>
+    <servlet-class>ru.academits.servlet.DeleteContactsServlet</servlet-class>
   </servlet>
 
   <servlet>
@@ -17,8 +22,13 @@
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>AddContactsServlet</servlet-name>
+    <servlet-name>AddContactServlet</servlet-name>
     <url-pattern>/add</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>DeleteContactsServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
   </servlet-mapping>
 
   <servlet-mapping>

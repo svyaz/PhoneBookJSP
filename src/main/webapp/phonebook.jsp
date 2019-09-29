@@ -29,6 +29,7 @@
         <button class="btn btn-primary">Сбросить фильтр</button>
     </div>
 
+    <form action="delete" method="POST">
     <table class="table table-bordered contact-table">
         <thead>
         <tr>
@@ -45,37 +46,38 @@
         </tr>
         </thead>
         <tbody>
-        <%  int number = 0;
-            for (Contact contact : contactList) {
-                number++;
-        %>
-        <tr>
-            <td>
-                <label class="select-me-label">
-                    <input type="checkbox" class="select-me"/>
-                </label>
-            </td>
-            <td>
-                <% out.println(number); %>
-            </td>
-            <td>
-                <% out.println(contact.getLastName()); %>
-            </td>
-            <td>
-                <% out.println(contact.getFirstName()); %>
-            </td>
-            <td>
-                <% out.println(contact.getPhone()); %>
-            </td>
-            <td>
-                <button class='btn btn-primary' type='button'>Удалить</button>
-            </td>
-        </tr>
-        <%}%>
+            <% int number = 0;
+                for (Contact contact : contactList) {
+                    number++;
+            %>
+            <tr>
+                <td>
+                    <label class="select-me-label">
+                        <input type="checkbox" class="select-me" name="contactId" value="<% out.print(contact.getId()); %>"/>
+                    </label>
+                </td>
+                <td>
+                    <% out.print(number); %>
+                </td>
+                <td>
+                    <% out.print(contact.getLastName()); %>
+                </td>
+                <td>
+                    <% out.print(contact.getFirstName()); %>
+                </td>
+                <td>
+                    <% out.print(contact.getPhone()); %>
+                </td>
+                <td>
+                    <button class='btn btn-primary' type='submit' name="contactId" value="<% out.print(contact.getId()); %>">Удалить</button>
+                </td>
+            </tr>
+            <%}%>
         </tbody>
     </table>
 
-    <button type="button" class="btn btn-primary">Удалить выбранные</button>
+    <button type="submit" class="btn btn-primary">Удалить выбранные</button>
+    </form>
 
     <br>
     <label class="server-error-message-container">
@@ -92,7 +94,7 @@
             <label class="form-label">
                 <span class="form-field">Фамилия:</span>
                 <input type="text" class="ml-1 form-control input-sm form-input" name="lastName"
-                       value='<%=currentContact.getLastName() == null ? "" : currentContact.getLastName() %>' />
+                       value='<%=currentContact.getLastName() == null ? "" : currentContact.getLastName() %>'/>
                 <span class="error-message">
                      <c:if test="${not empty contactValidation.lastNameError}">
                          <c:out value="${contactValidation.lastNameError}">
@@ -105,7 +107,7 @@
             <label class="form-label">
                 <span class="form-field">Имя:</span>
                 <input type="text" class="ml-1 form-control input-sm form-input" name="firstName"
-                       value='<%=currentContact.getFirstName() == null ? "" : currentContact.getFirstName() %>' />
+                       value='<%=currentContact.getFirstName() == null ? "" : currentContact.getFirstName() %>'/>
                 <span class="error-message">
                     <c:if test="${not empty contactValidation.firstNameError}">
                         <c:out value="${contactValidation.firstNameError}">
@@ -118,7 +120,7 @@
             <label class="form-label">
                 <span class="form-field">Телефон:</span>
                 <input type="number" class="ml-1 form-control input-sm form-input" name="phone"
-                       value='<%=currentContact.getPhone() == null ? "" : currentContact.getPhone() %>' />
+                       value='<%=currentContact.getPhone() == null ? "" : currentContact.getPhone() %>'/>
                 <span class="error-message">
                      <c:if test="${not empty contactValidation.phoneError}">
                          <c:out value="${contactValidation.phoneError}">

@@ -6,3 +6,4 @@
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/model/Contact.java
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/coverter/ContactConverter.java
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/PhoneBook.java
+/Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/servlet/DeleteContactsServlet.java

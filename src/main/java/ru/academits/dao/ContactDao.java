@@ -6,6 +6,7 @@ import ru.academits.service.ContactValidation;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
 /**
  * Created by Anna on 17.06.2017.
@@ -36,6 +37,21 @@ public class ContactDao {
     public void add(Contact contact) {
         contact.setId(getNewId());
         contactList.add(contact);
+    }
+
+    /**
+     * Deletes all contacts in contactList which id contains in specified idsList.
+     *
+     * @param idsList list of contacts identifier to delete.
+     * @return number of deleted contacts.
+     */
+    public int deleteContacts(List<Integer> idsList) {
+        int sizeBefore = contactList.size();
+
+        contactList = contactList.stream()
+                .filter(c -> !idsList.contains(c.getId()))
+                .collect(Collectors.toList());
+        return sizeBefore - contactList.size();
     }
 
     public void saveLastContact(Contact contact) {
