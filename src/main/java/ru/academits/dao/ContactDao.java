@@ -34,6 +34,7 @@ public class ContactDao {
     }
 
     public void add(Contact contact) {
+        contact.setId(getNewId());
         contactList.add(contact);
     }
 
