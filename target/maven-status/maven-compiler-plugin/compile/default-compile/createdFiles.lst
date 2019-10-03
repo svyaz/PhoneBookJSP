@@ -1,8 +1,8 @@
 ru/academits/model/Contact.class
-ru/academits/servlet/StartServlet.class
 ru/academits/PhoneBook.class
 ru/academits/service/ContactsDeletion.class
 ru/academits/servlet/AddContactServlet.class
+ru/academits/servlet/GetContactsListServlet.class
 ru/academits/dao/ContactDao.class
 ru/academits/service/ContactService.class
 ru/academits/service/ContactValidation.class

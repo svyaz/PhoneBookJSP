@@ -20,7 +20,7 @@ public class ContactConverter {
         return contact;
     }
 
-    public List<Integer> convertIdsFromStringParam(String deleteParamsString) throws UnsupportedEncodingException {
+    public List<Integer> convertIdsFromStringParam(String deleteParamsString) {
         List<Integer> ids = new ArrayList<>();
         String[] pairs = deleteParamsString.split("&");
 

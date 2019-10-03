@@ -24,17 +24,17 @@ public class ContactService {
     public ContactValidation validateContact(Contact contact) {
         ContactValidation contactValidation = new ContactValidation();
         contactValidation.setValid(true);
-        if (StringUtils.isEmpty(contact.getFirstName())){
+        if (StringUtils.isEmpty(contact.getFirstName())) {
             contactValidation.setValid(false);
             contactValidation.setFirstNameError("Поле Имя должно быть заполнено.");
         }
 
-        if (StringUtils.isEmpty(contact.getLastName())){
+        if (StringUtils.isEmpty(contact.getLastName())) {
             contactValidation.setValid(false);
             contactValidation.setLastNameError("Поле Фамилия должно быть заполнено.");
         }
 
-        if (StringUtils.isEmpty(contact.getPhone())){
+        if (StringUtils.isEmpty(contact.getPhone())) {
             contactValidation.setValid(false);
             contactValidation.setPhoneError("Поле Телефон должно быть заполнено.");
         }
@@ -70,8 +70,11 @@ public class ContactService {
         return contactDao.getAllContacts();
     }
 
-    public void saveLastContact(Contact contact) {
+    public List<Contact> getFilteredContacts(String filterString) {
+        return contactDao.getFilteredContacts(filterString);
+    }
 
+    public void saveLastContact(Contact contact) {
         contactDao.saveLastContact(contact);
     }
 
