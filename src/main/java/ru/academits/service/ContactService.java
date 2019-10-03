@@ -12,7 +12,7 @@ public class ContactService {
     private ContactDao contactDao = PhoneBook.contactDao;
 
     private boolean isExistContactWithPhone(String phone) {
-        List<Contact> contactList = contactDao.getAllContacts();
+        List<Contact> contactList = contactDao.getFilteredContacts("");
         for (Contact contact : contactList) {
             if (contact.getPhone().equals(phone)) {
                 return true;
@@ -64,10 +64,6 @@ public class ContactService {
             contactsDeletion.setError("Ни одного контакта не удалено.");
         }
         return contactsDeletion;
-    }
-
-    public List<Contact> getAllContacts() {
-        return contactDao.getAllContacts();
     }
 
     public List<Contact> getFilteredContacts(String filterString) {

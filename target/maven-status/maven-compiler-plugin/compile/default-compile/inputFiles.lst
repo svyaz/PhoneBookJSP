@@ -1,7 +1,8 @@
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/service/ContactService.java
-/Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/servlet/StartServlet.java
+/Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/servlet/GetContactsListServlet.java
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/service/ContactValidation.java
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/servlet/AddContactServlet.java
+/Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/service/ContactsDeletion.java
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/dao/ContactDao.java
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/model/Contact.java
 /Users/max/IdeaProjects/Academ-IT-School/05_BackEnd/Tasks/PhoneBookJSP/src/main/java/ru/academits/coverter/ContactConverter.java

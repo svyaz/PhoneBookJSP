@@ -30,10 +30,6 @@ public class ContactDao {
         return idSequence.addAndGet(1);
     }
 
-    public List<Contact> getAllContacts() {
-        return contactList;
-    }
-
     /**
      * Get filtered contacts list where firstName or lastName or phone contains
      * specified string.
@@ -42,6 +38,10 @@ public class ContactDao {
      * @return filtered contacts list.
      */
     public List<Contact> getFilteredContacts(String filterString) {
+        if (filterString.isEmpty()) {
+            return contactList;
+        }
+
         String lowerCaseFilterString = filterString.toLowerCase();
         return contactList
                 .stream()

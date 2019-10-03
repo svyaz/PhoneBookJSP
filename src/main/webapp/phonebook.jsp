@@ -20,32 +20,34 @@
 
 <div class="alert" title="Нет выбранных контактов"></div>
 <div class="content">
-    <div class="filter-container">
-        <label class="filter-label mb-0 mr-2">
-            Введите текст:
-            <input type="text" class="form-control input-sm"/>
-        </label>
-        <button class="btn btn-primary">Отфильтровать</button>
-        <button class="btn btn-primary">Сбросить фильтр</button>
-    </div>
+    <form action="phonebook" method="get">
+        <div class="filter-container">
+            <label class="filter-label mb-0 mr-2">
+                Введите текст:
+                <input type="text" class="form-control input-sm" id="filter" value="<%= request.getAttribute("filterString") %>"/>
+            </label>
+            <button type="submit" name="s" class="btn btn-primary" onclick="this.value = document.getElementById('filter').value;">Отфильтровать</button>
+            <button type="submit" name="s" class="btn btn-primary" value="">Сбросить фильтр</button>
+        </div>
+    </form>
 
     <form action="delete" method="POST">
-    <table class="table table-bordered contact-table">
-        <thead>
-        <tr>
-            <th>
-                <label class="select-all-label">
-                    <input type="checkbox" title="Выбрать"/>
-                </label>
-            </th>
-            <th>№</th>
-            <th>Фамилия</th>
-            <th>Имя</th>
-            <th>Телефон</th>
-            <th>Удалить</th>
-        </tr>
-        </thead>
-        <tbody>
+        <table class="table table-bordered contact-table">
+            <thead>
+            <tr>
+                <th>
+                    <label class="select-all-label">
+                        <input type="checkbox" title="Выбрать"/>
+                    </label>
+                </th>
+                <th>№</th>
+                <th>Фамилия</th>
+                <th>Имя</th>
+                <th>Телефон</th>
+                <th>Удалить</th>
+            </tr>
+            </thead>
+            <tbody>
             <% int number = 0;
                 for (Contact contact : contactList) {
                     number++;
@@ -53,7 +55,8 @@
             <tr>
                 <td>
                     <label class="select-me-label">
-                        <input type="checkbox" class="select-me" name="contactId" value="<% out.print(contact.getId()); %>"/>
+                        <input type="checkbox" class="select-me" name="contactId"
+                               value="<% out.print(contact.getId()); %>"/>
                     </label>
                 </td>
                 <td>
@@ -69,14 +72,16 @@
                     <% out.print(contact.getPhone()); %>
                 </td>
                 <td>
-                    <button class='btn btn-primary' type='submit' name="contactId" value="<% out.print(contact.getId()); %>">Удалить</button>
+                    <button class='btn btn-primary' type='submit' name="contactId"
+                            value="<% out.print(contact.getId()); %>">Удалить
+                    </button>
                 </td>
             </tr>
             <%}%>
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    <button type="submit" class="btn btn-primary">Удалить выбранные</button>
+        <button type="submit" class="btn btn-primary">Удалить выбранные</button>
     </form>
 
     <br>
